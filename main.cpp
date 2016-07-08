@@ -170,18 +170,18 @@ int main(int argc, char* argv[])
            state.asrPause();
            cout << "This is when the game should begin" << endl;
            bool repeatgame = true;
-           // state.say("Great let's get started.");
+           state.say("Great, let's get started.");
            qi::os::sleep(1);
-           // state.say("I'm going to show you an emotion and it's your job to guess what it is.");
+           state.say("I'm going to show you an emotion, and it's your job to guess what it is.");
            qi::os::sleep(1);
-           // state.say("The four options are happy, sad, scared, and angry.");
+           state.say("The four options are happy, sad, scared, and angry.");
            qi::os::sleep(1);
 
 
            /* Game Sequence */
            while(repeatgame == true)
            {
-                //state.say("Let's get started. Here is the first emotion.");
+                state.say("Let's get started. Here is the first emotion.");
                 std::cout << "Displaying first emotion" << endl;
                 qi::os::sleep(1);
 
@@ -217,7 +217,7 @@ int main(int argc, char* argv[])
                     state.angry();
                 }
 
-                //state.say("Okay, guess which emotion I just displayed.");
+                state.say("Okay, guess which emotion I just displayed.");
                 std::cout << "Guess the emotion" << endl;
                 state.asrGame();
 
@@ -227,7 +227,7 @@ int main(int argc, char* argv[])
 
                     if(firstemotion == state.emotionCheck)
                     {
-                        //state.say("You got it right! Let's do the next emotion");
+                        state.say("You got it right! Let's do the next emotion");
                         std::cout << "Correct. Next Emotion." << endl;
                         state.emotionCheck = 0;
                         state.asrPause();
@@ -235,13 +235,13 @@ int main(int argc, char* argv[])
                     }
                     else if(state.emotionCheck == 5)
                     {
-                        //state.say("Sorry I didn't understand you. Please repeat your answer.")
+                        state.say("Sorry, I didn't understand you. Please repeat your answer.");
                         std::cout << state.emotionCheck << endl;
                         state.emotionCheck = 0;
                     }
                     else if(firstemotion != state.emotionCheck && state.emotionCheck != 0)
                     {
-                        //state.say("Sorry that is incorrect. Please try a different emotion.");
+                        state.say("Sorry, that is incorrect. Please try a different answer.");
                         std::cout << "Sorry that is incorrect. Please try a different emotion." << endl;
                         state.emotionCheck = 0;
                     }
@@ -251,7 +251,6 @@ int main(int argc, char* argv[])
                 state.stand();
 
                 std::cout << "Displaying the second emotion." << endl;
-                // state.say("Now I'm going to show you the next emotion.");
                 int indextwo = 1 + ( std::rand() % ( 3 - 1 + 1));
                 int secondemotion = emotionlist[indextwo-1];
                 emotionlist.erase(std::remove(emotionlist.begin(), emotionlist.end(), secondemotion), emotionlist.end());
@@ -276,6 +275,8 @@ int main(int argc, char* argv[])
                     state.angry();
                 }
 
+                state.say("Okay, guess which emotion I just displayed.");
+                std::cout << "Guess the emotion" << endl;
                 state.asrGame();
 
                 bool repeattwo = true;
@@ -284,7 +285,7 @@ int main(int argc, char* argv[])
 
                     if(secondemotion == state.emotionCheck)
                     {
-                        //state.say("You got it right! Let's do the next emotion")
+                        state.say("You got it right! Let's do the next emotion");
                         std::cout << "Correct. Next Emotion." << endl;
                         state.emotionCheck = 0;
                         state.asrPause();
@@ -292,17 +293,18 @@ int main(int argc, char* argv[])
                     }
                     else if(state.emotionCheck == 5)
                     {
-                        //state.say("Sorry I didn't understand you.")
+                        state.say("Sorry, I didn't understand you.");
                         std::cout << state.emotionCheck << endl;
                         state.emotionCheck = 0;
                     }
                     else if(secondemotion != state.emotionCheck && state.emotionCheck != 0)
                     {
-                        //state.say("Sorry that is incorrect. Please try a different emotion.")
+                        state.say("Sorry, that is incorrect. Please try a different answer.");
                         std::cout << "Sorry that is incorrect. Please try a different emotion." << endl;
                         state.emotionCheck = 0;
                     }
                 }
+
                 std::cout << "Displaying the third emotion." << endl;
                 int indexthree = 1 + ( std::rand() % ( 2 - 1 + 1));
                 int thirdemotion = emotionlist[indexthree-1];
@@ -328,6 +330,8 @@ int main(int argc, char* argv[])
                     state.angry();
                 }
 
+                state.say("Okay, guess which emotion I just displayed.");
+                std::cout << "Guess the emotion" << endl;
                 state.asrGame();
 
                 bool repeatthree = true;
@@ -336,7 +340,7 @@ int main(int argc, char* argv[])
 
                     if(thirdemotion == state.emotionCheck)
                     {
-                        //state.say("You got it right! Let's do the next emotion")
+                        state.say("You got it right! Let's do the next emotion");
                         std::cout << "Correct. Next Emotion." << endl;
                         state.emotionCheck = 0;
                         state.asrPause();
@@ -344,13 +348,13 @@ int main(int argc, char* argv[])
                     }
                     else if(state.emotionCheck == 5)
                     {
-                        //state.say("Sorry I didn't understand you.")
+                        state.say("Sorry, I didn't understand you.");
                         std::cout << state.emotionCheck << endl;
                         state.emotionCheck = 0;
                     }
                     else if(thirdemotion != state.emotionCheck && state.emotionCheck != 0)
                     {
-                        //state.say("Sorry that is incorrect. Please try a different emotion.")
+                        state.say("Sorry, that is incorrect. Please try a different answer.");
                         std::cout << "Sorry that is incorrect. Please try a different emotion." << endl;
                         state.emotionCheck = 0;
                     }
@@ -383,6 +387,8 @@ int main(int argc, char* argv[])
                     state.angry();
                 }
 
+                state.say("Okay, guess which emotion I just displayed.");
+                std::cout << "Guess the emotion" << endl;
                 state.asrGame();
 
                 bool repeatfour = true;
@@ -391,7 +397,6 @@ int main(int argc, char* argv[])
 
                     if(fourthemotion == state.emotionCheck)
                     {
-                        //state.say("You got it right! Let's do the next emotion")
                         std::cout << "Correct." << endl;
                         state.emotionCheck = 0;
                         state.asrPause();
@@ -399,13 +404,13 @@ int main(int argc, char* argv[])
                     }
                     else if(state.emotionCheck == 5)
                     {
-                        //state.say("Sorry I didn't understand you.")
+                        state.say("Sorry, I didn't understand you.");
                         std::cout << state.emotionCheck << endl;
                         state.emotionCheck = 0;
                     }
                     else if(fourthemotion != state.emotionCheck && state.emotionCheck != 0)
                     {
-                        //state.say("Sorry that is incorrect. Please try a different emotion.")
+                        state.say("Sorry, that is incorrect. Please try a different answer.");
                         std::cout << "Sorry that is incorrect. Please try a different emotion." << endl;
                         state.emotionCheck = 0;
                     }
@@ -414,7 +419,7 @@ int main(int argc, char* argv[])
 
            qi::os::sleep(2);
            state.stand();
-           //state.post.say("Congratulations, you guessed them all right! Thanks for playing. Would you like to play again? Say yes or no.");
+           state.speech.post.say("Congratulations, you guessed them all right! Thanks for playing. Would you like to play again? Say yes or no.");
            std::cout << "Congratulations, you won! Would you like to play again?" << endl;
            state.cheer();
            state.asrCheck = 0;
@@ -431,8 +436,14 @@ int main(int argc, char* argv[])
                {
                    repeatgame = false;
                    thelastboolean = false;
+                   repeat = false;
                }
            }
+
+           state.asrPause();
+           state.asrCheck = 0;
+           state.stand();
+           qi::os::sleep(2);
 
 
            }
@@ -441,7 +452,8 @@ int main(int argc, char* argv[])
            state.asrPause();
            state.asrCheck = 0;
            state.stand();
-           qi::os::sleep(10);
+           state.say("That was fun! Bye for now.");
+           qi::os::sleep(8);
 
       }
 
@@ -451,6 +463,7 @@ int main(int argc, char* argv[])
           state.asrPause();
           state.asrCheck = 0;
           state.stand();
+          state.say("That's too bad, maybe some other time then.");
           qi::os::sleep(10);
       }
 

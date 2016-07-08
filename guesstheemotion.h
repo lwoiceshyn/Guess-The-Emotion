@@ -101,6 +101,8 @@ public:
 
     static int emotionCheck;
 
+    AL::ALTextToSpeechProxy speech;
+
 
 
 
@@ -108,7 +110,7 @@ public:
 private:
     /* Proxies */
     AL::ALMotionProxy motion;
-    AL::ALTextToSpeechProxy speech;
+
     AL::ALMemoryProxy memory;
     AL::ALSpeechRecognitionProxy asr;
     AL::ALRobotPostureProxy posture;

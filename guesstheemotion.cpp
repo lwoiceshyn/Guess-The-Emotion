@@ -527,7 +527,7 @@ void GuessTheEmotion::greeting()
     times[13][3] = 5;
     keys[13][3] = AL::ALValue::array(0.118076, AL::ALValue::array(3, -0.186667, 0), AL::ALValue::array(3, 0, 0));
 
-//    speech.post.say("Hi there, my name is Leia. Would you like to play a game with me? Say yes or no");
+    speech.post.say("Hi there, my name is Leia. Would you like to play a game with me? Say yes or no");
     std::cout << "Say yes or no" << std::endl;
     getParentBroker()->getMotionProxy()->angleInterpolationBezier(names, times, keys);
 }
@@ -2536,21 +2536,21 @@ void GuessTheEmotion::onWordRecognized(const std::string& name, const AL::ALValu
         {
             asrCheck = 2;
         }
-        else if((std::string)val[i*2] == "happy" && (float)val[i*2+1] > 0.5)
+        else if((std::string)val[i*2] == "happy" && (float)val[i*2+1] > 0.4)
         {
-            emotionCheck = 1;
+            this->emotionCheck = 1;
         }
-        else if((std::string)val[i*2] == "sad" && (float)val[i*2+1] > 0.5)
+        else if((std::string)val[i*2] == "sad" && (float)val[i*2+1] > 0.4)
         {
-            emotionCheck = 2;
+            this->emotionCheck = 2;
         }
-        else if((std::string)val[i*2] == "scared" && (float)val[i*2+1] > 0.5)
+        else if((std::string)val[i*2] == "scared" && (float)val[i*2+1] > 0.4)
         {
-            emotionCheck = 3;
+            this->emotionCheck = 3;
         }
-        else if((std::string)val[i*2] == "angry" && (float)val[i*2+1] > 0.5)
+        else if((std::string)val[i*2] == "angry" && (float)val[i*2+1] > 0.4)
         {
-            emotionCheck = 4;
+            this->emotionCheck = 4;
         }
         else
         {
