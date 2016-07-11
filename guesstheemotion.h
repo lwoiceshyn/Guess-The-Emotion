@@ -13,6 +13,7 @@
 #include <alproxies/alspeechrecognitionproxy.h>
 #include <alproxies/alrobotpostureproxy.h>
 #include <alproxies/altouchproxy.h>
+#include <alproxies/alanimatedspeechproxy.h>
 
 #include <althread/almutex.h>
 #include <althread/alcriticalsection.h>
@@ -28,7 +29,6 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/algorithm/string.hpp>
 
-extern bool global_start;
 
 namespace AL
 {
@@ -54,6 +54,10 @@ public:
     bool robotIsWakeUp();
 
     void wakeUp();
+
+    void rest();
+
+    void wave();
 
     void stand();
 
@@ -87,6 +91,10 @@ public:
 
     void say(const std::string phrase);
 
+    void animatedSay(const std::string phrase);
+
+    void ledsOff();
+
     void happy();
 
     void sad();
@@ -110,13 +118,12 @@ public:
 private:
     /* Proxies */
     AL::ALMotionProxy motion;
-
     AL::ALMemoryProxy memory;
     AL::ALSpeechRecognitionProxy asr;
+    AL::ALAnimatedSpeechProxy animated;
     AL::ALRobotPostureProxy posture;
     AL::ALLedsProxy eyes;
 
-//Software not up to date for this proxy:    AL::ALWavingDetectionProxy waving;
     boost::shared_ptr<AL::ALMutex> mutex;
 
 
