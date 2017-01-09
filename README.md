@@ -8,7 +8,7 @@ If the user says yes, the robot will cycle through its different emotional state
 
 ## Requirements
 + Latest version of the Nao SDK Installed
-+ Ubuntu 14.04 or Later
++ Ubuntu 14.04/16.04
 
 ## To Run
 In order to run this program, you need to create a new project using qisrc create, and then clone the repository in the project directory. Once completed, you can the program through bash.
