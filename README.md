@@ -1,3 +1,12 @@
 # Guess The Emotion
 
-A module for an interactive game where the Nao robot displays different emotions and asks the user to correctly identify them.
+An interactive game application for the humanoid social robot by Aldebaran robotics, the Nao.
+
+The robot, upon detecting a face in its frontal camera, will ask the user if they would like to participate in a game of emotional recognition. 
+
+If the user says yes, the robot will cycle through its different emotional states, asking the user to correctly classify them. If the user gets the state right, the robot will move onto the next state; if they are wrong, the robot will ask the user to guess again until they get it correct. 
+
+Requirements
+*Latest version of the Nao SDK
+*Ubuntu 14.04 or Later
+
